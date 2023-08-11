@@ -1,7 +1,8 @@
 import React from "react";
 import style from "./List.module.scss";
+import Item from "./Item";
 
-function List() {
+export default function List() {
   const tasks = [
     {
       task: "React",
@@ -19,17 +20,11 @@ function List() {
 
   return (
     <aside className={style.listaTarefas}>
-      <h2></h2>
       <ul className="">
         {tasks.map((t, i) => (
-          <li key={i} className={style.item}>
-            <h3>{t.task}</h3>
-            <span>{t.time}</span>
-          </li>
+          <Item key="i" {...t} />
         ))}
       </ul>
     </aside>
   );
 }
-
-export default List;
